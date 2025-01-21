@@ -5,6 +5,80 @@ import org.junit.jupiter.api.Test;
 
 public class RadioTest {
     @Test
+    public void setTheRequiredNumberOfRadioStations() {
+
+        Radio rad = new Radio(20);
+        rad.setNumberCurrentRadioStat(15);
+
+        Assertions.assertEquals(15, rad.getNumberCurrentRadioStat());
+    }
+
+    @Test
+    public void setTheMinRadioStation() {
+
+        Radio cond = new Radio(20);
+        cond.setNumberCurrentRadioStat(0);
+
+        Assertions.assertEquals(0, cond.getNumberCurrentRadioStat());
+    }
+
+    @Test
+    public void setTheMaxRadioStation() {
+
+        Radio cond = new Radio(20);
+        cond.setNumberCurrentRadioStat(19);
+
+        Assertions.assertEquals(19, cond.getNumberCurrentRadioStat());
+    }
+
+    @Test
+    public void setMaxRadioStation() {
+        Radio rad = new Radio();
+
+        rad.setNumberCurrentRadioStat(9);
+
+        int expected = 9;
+        int actual = rad.getMaxNumberCurrentRadioStat();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void setMinRadioStation() {
+        Radio rad = new Radio();
+        rad.setNumberCurrentRadioStat(0);
+
+        int expected = 0;
+        int actual = rad.getMinNumberCurrentRadioStat();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void theMaxVolumeShouldBeSet() {
+        Radio rad = new Radio();
+
+        rad.setSoundVolumeRadio(100);
+
+        int expected = 100;
+        int actual = rad.getMaxSoundVolumeRadio();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void theMinVolumeShouldBeSet() {
+        Radio rad = new Radio();
+
+        rad.setSoundVolumeRadio(0);
+
+        int expected = 0;
+        int actual = rad.getMinSoundVolumeRadio();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
     public void shouldSetMaxRadioStations() {
         Radio rad = new Radio();
         rad.setNumberCurrentRadioStat(10);
